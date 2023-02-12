@@ -18,16 +18,12 @@ jobs:
         to: ${{ secrets.TG_ID }}
         token: ${{ secrets.TG_TOKEN }}
         message: |
-          ${{ github.actor }} создал новый коммит: ${{ 
-github.event.commits[0].message }}
-          Ссылка на коммит: https://github.com/${{ github.repository 
-}}/commit/${{github.sha}}
+          ${{ github.actor }} создал новый коммит: ${{ github.event.commits[0].message }}
+          Ссылка на коммит: https://github.com/${{ github.repository }}/commit/${{github.sha}}
           Репозиторий: https://github.com/${{ github.repository }}
             
-          CI/CD github actions: https://github.com/${{ github.repository 
-}}/actions
-          https://github.com/${{ github.repository 
-}}/actions/runs/${{github.run_id}}
+          CI/CD github actions: https://github.com/${{ github.repository }}/actions
+          https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
     - name: Checkout
       uses: actions/checkout@v2
     - name: Пройти проверки CSS линтера
